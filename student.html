@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Student Registration System</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(120deg,#74ebd5,#ACB6E5);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:12px;
+width:350px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+background:#007BFF;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+#message{
+text-align:center;
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Registration Form</h2>
+
+<form id="registrationForm">
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="text" id="phone" placeholder="Phone Number">
+
+<select id="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<input type="text" id="course" placeholder="Course">
+
+<input type="password" id="password" placeholder="Password">
+
+<button type="submit">Register</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+document.getElementById("registrationForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let gender=document.getElementById("gender").value;
+let course=document.getElementById("course").value;
+let password=document.getElementById("password").value;
+
+if(name=="" || email=="" || phone=="" || gender=="" || course=="" || password=="")
+{
+document.getElementById("message").innerHTML="⚠ Please fill all fields";
+document.getElementById("message").style.color="red";
+}
+else
+{
+document.getElementById("message").innerHTML="✅ Registration Successful!";
+document.getElementById("message").style.color="green";
+}
+
+});
+
+</script>
+
+</body>
+</html>
